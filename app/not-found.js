@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Projects = () => {
+const NotFound = () => {
   return (
     <div>
-      Projects 
+      Not Found
     </div>
   )
 }
 
-export default Projects
+export default NotFound
