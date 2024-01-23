@@ -1,10 +1,8 @@
-'use client'
+
 import { useRouter } from 'next/navigation'
 // import About from './about/page'
 import Link from 'next/link'
-import { Roboto } from 'next/font/google'
 
- const roboto = Roboto({subsets : ['latin'] ,weight : '500'})
 
 
 const Home = () => {
@@ -14,12 +12,10 @@ const Home = () => {
   //   router.push(page)
   //  }
 
-
   return (
    <section>
-   <h1>Google Fonts</h1>
-   <h2 className={roboto.className}>Hello this is roboto font </h2>
-    <h1>HOME</h1>
+
+    <h1>Next.Js Complete Course </h1>
 
    {/* expanation of different types of Routinhg  */}
 
