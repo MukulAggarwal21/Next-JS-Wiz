@@ -1,28 +1,24 @@
-'use client'
-import React from 'react'
-import {useEffect , useState} from "react";
+async function fetchData(){
+    let data = await fetch('https://jsonplaceholder.typicode.com/posts')
+   data = await data.json ()
+    return data;
+  }
 
-const Data = () => {
-   const [product , setProduct] = useState([])
-    
-   useEffect(()=>{
-      async function fetchData() {
-        let data = await fetch('https://jsonplaceholder.typicode.com/posts')
-        data = await data.json()
-        setProduct(data)
-        console.log(data)
-      }
-      fetchData()
-   } , [ ])
+const Data = async () =>{
+    let products = await fetchData()
+    console.log(products)
+  
+
 
   return (
-    <ul>
-        {product?.map((p) =>(
-            <>
-                <li className='border m-5 px-4 py-2'  key={p.id} >{p.title} </li>
-            </>
-        ))}
-    </ul>
+   <div>
+    {products?.map((p)=>(
+
+       <p key={p.id}>{p.title}</p>
+  
+    ))}
+     
+   </div>
   );
 };
 
